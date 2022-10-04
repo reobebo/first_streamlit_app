@@ -4,8 +4,6 @@ import requests
 streamlit.header('Fruityvice Fruit Advice!')
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
 
-streamlit.title('My Parents New Healthy Diner')
-
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
@@ -22,6 +20,9 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(my_fruit_list)
+
+
+streamlit.title('My Parents New Healthy Diner')
 
 # write your own comment -what does the next line do? 
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
